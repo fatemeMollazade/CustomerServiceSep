@@ -1,0 +1,9 @@
+﻿using CustomerService.Core.Domain.People.Entities;
+
+namespace CustomerService.Core.ApplicationService.People.Contracts
+{
+    public interface IPersonCommandRepository
+    {
+        void Add(Person person);
+    }
+}
