@@ -14,8 +14,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddTransient<PersonCreateCommandHandler>();
-builder.Services.AddTransient<IPersonCommandRepository, PersonCommandRepository>();
+builder.Services.AddScoped<PersonCreateCommandHandler>();
+builder.Services.AddScoped<IPersonCommandRepository, PersonCommandRepository>();
 builder.Services.AddDbContext<CustomerDbContext>();
 //builder.Services.AddFluentValidationClientsideAdapters.
 builder.Services.AddScoped<IValidator<PersonCreateCommand>, PersonCreateValidator>();
