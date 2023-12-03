@@ -17,7 +17,7 @@ namespace CustomerService.Infra.Sql.People
         {
             this.context = context;
         }
-        public void Add(Person person)
+        public async Task Add(Person person)
         {
             context.People.Add(person);
             context.SaveChanges();

@@ -8,16 +8,16 @@ namespace CustomerService.Endpoints.Api.Controllers
     [ApiController]
     public class PersonController : ControllerBase
     {
-        private readonly PersonCreateCommandHandler personService;
+        //private readonly PersonCreateCommandHandler personService;
 
-        public PersonController(PersonCreateCommandHandler personService)
-        {
-            this.personService = personService;
-        }
+        //public PersonController(PersonCreateCommandHandler personService)
+        //{
+        //    this.personService = personService;
+        //}
         [HttpPost]
-        public IActionResult AddPerson(PersonCreateCommand input) 
+        public async Task<IActionResult> AddPerson([FromServices]PersonCreateHandler handler,PersonCreateCommand input) 
         {
-            personService.AddPerson(input);
+           await handler.Handle(input);
             return Ok();
         }
     }

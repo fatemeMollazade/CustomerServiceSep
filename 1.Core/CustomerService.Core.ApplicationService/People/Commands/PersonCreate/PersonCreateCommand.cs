@@ -1,6 +1,8 @@
-﻿namespace CustomerService.Core.ApplicationService.People.Commands.PersonCreate
+﻿using CustomerService.Framwork;
+
+namespace CustomerService.Core.ApplicationService.People.Commands.PersonCreate
 {
-    public class PersonCreateCommand
+    public class PersonCreateCommand : ICommand
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

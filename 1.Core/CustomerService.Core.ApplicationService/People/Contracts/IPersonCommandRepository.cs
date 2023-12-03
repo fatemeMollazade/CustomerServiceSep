@@ -4,6 +4,6 @@ namespace CustomerService.Core.ApplicationService.People.Contracts
 {
     public interface IPersonCommandRepository
     {
-        void Add(Person person);
+        Task Add(Person person);
     }
 }
