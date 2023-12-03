@@ -1,4 +1,5 @@
 ﻿using CustomerService.Core.Domain.People.Entities;
+using CustomerService.Infra.Sql.People;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,13 @@ namespace CustomerService.Infra.Sql
         {
             optionsBuilder.UseSqlServer("Server=.; Initial Catalog = CustomerDb; User Id = sa; Password = 123");
             //base.OnConfiguring(optionsBuilder);
+        }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.ApplyConfiguration(new PersonConfig());
+           
         }
     }
 }
