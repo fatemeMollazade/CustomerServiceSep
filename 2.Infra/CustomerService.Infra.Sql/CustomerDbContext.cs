@@ -14,7 +14,7 @@ namespace CustomerService.Infra.Sql
         public DbSet<Person> People { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=.; Initial Catalog = CustomerDb; User Id = sa; Password = 123");
+            optionsBuilder.UseSqlServer("Server=MOLLAZADEH-F; Initial Catalog = CustomerDb; Trusted_Connection=True;TrustServerCertificate=Yes");
             //base.OnConfiguring(optionsBuilder);
         }
 
